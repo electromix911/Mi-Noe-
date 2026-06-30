@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Noemí ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#ffd6e7, #fff);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+}
+
+.contenedor {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px pink;
+}
+
+h1 {
+    color: #e91e63;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+}
+
+button {
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c2185b;
+}
+
+#foto {
+    display: none;
+    width: 250px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.corazon {
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<h1>Te quiero Noemí ❤️</h1>
+
+<p>
+Espero verte mañana corazón de melón 🍈,<br>
+y poder sentir tu vibra y pasarla muy bien contigo ❤️
+</p>
+
+<button onclick="mostrarAmor()">Presiona aquí ❤️</button>
+
+<br>
+
+<img id="foto" src="foto_noemi.jpg">
+
+</div>
+
+
+<script>
+
+function mostrarAmor(){
+
+document.getElementById("foto").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(corazon);
+
+
+setTimeout(()=>{
+corazon.remove();
+},5000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
